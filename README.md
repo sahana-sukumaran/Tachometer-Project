@@ -86,9 +86,9 @@ This project is a Tachometer designed to measure the rotational speed (RPM) of a
 ## ✅ Expected Results
 
 - **Raw Sensor Values**: The Serial Monitor will print analog readings from the Hall effect sensor.  
-  - ~0–600 when no magnet is nearby  
-  - >600 when the magnet passes close  
+  - 0–600 when no magnet is nearby  
+  - 600 when the magnet is close  
 
 - **Pulse Counting**: One pulse per magnet pass (rotation or partial rotation)
 
-- **RPM Calculation**:  
+- **RPM Calculation**: RPM = number_of_pulses_in_1_second * 60
