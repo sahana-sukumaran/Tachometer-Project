@@ -1,6 +1,6 @@
 # Tachometer Project
 Overview
-This project is a Tachometer designed to measure the rotational speed (RPM) of a shaft or disk. It was developed as a college team project to demonstrate practical skills in electronics, microcontrollers, and embedded programming.
+-This project is a Tachometer designed to measure the rotational speed (RPM) of a shaft or disk. It was developed as a college team project to demonstrate practical skills in electronics, microcontrollers, and embedded programming.
 
 Features
 - Measures RPM accurately using Hall effect sensor
