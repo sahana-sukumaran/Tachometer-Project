@@ -1,76 +1,94 @@
-# Tachometer Project
-Overview
--This project is a Tachometer designed to measure the rotational speed (RPM) of a shaft or disk. It was developed as a college team project to demonstrate practical skills in electronics, microcontrollers, and embedded programming.
+# 🔧 Tachometer Project
 
-Features
-- Measures RPM accurately using Hall effect sensor
-- Displays RPM on LCD
+## 📋 Overview
+
+This project is a Tachometer designed to measure the rotational speed (RPM) of a shaft or disk. It was developed as a **college team project** to demonstrate practical skills in electronics, microcontrollers, and embedded programming.
+
+## ✨ Features
+
+- Accurate RPM measurement using a Hall effect sensor
 - Real-time speed monitoring
+- RPM display on a 16x2 LCD screen
 
-Team Members
-Sahana Sukumaran
-Mugashree K
-Bernice Cynthia P
-Radhiha BR
+## 👩‍💻 Team Members
 
-Hardware Components
-Microcontroller: Arduino Nano
-Sensor: Hall effect sensor
-Display: 1602 LCD display
-Other components: jumper wire, breadboard, USB cable
+- Sahana Sukumaran  
+- Mugashree K  
+- Bernice Cynthia P  
+- Radhiha BR  
 
-Software/Tools Used
-Programming language: C++
+## 🔌 Hardware Components
 
-IDE: Arduino IDE
+- **Microcontroller**: Arduino Nano  
+- **Sensor**: Hall effect sensor  
+- **Display**: 1602 LCD display  
+- **Others**: Jumper wires, Breadboard, USB cable  
 
-Libraries: LiquidCrystal
+## 🛠️ Software/Tools Used
 
-How to Use
-How to Use
-1. Hardware Setup
-Fix the Arduino board, LCD, and Hall effect sensor module securely on the breadboard or base.
+- **Programming Language**: C++  
+- **IDE**: Arduino IDE  
+- **Library**: LiquidCrystal  
 
-Make sure all components are stable and won’t move during operation.
+## ⚙️ How to Use
 
-2. Wiring Connections
-LCD Pin	 Arduino Pin	    Notes
-DB7      D2	              Data bit 7
-DB6	     D3	              Data bit 6
-DB5	     D4             	Data bit 5
-DB4	     D5	              Data bit 4
-E        D11	            LCD enable pin
-R/W   	 GND              Set to ground (write mode)
-RS       D12	            LCD register select pin
-VCC   	 5V	              Power
-VSS	     GND	            Ground
-R5       GND	            Contrast pin (connect to GND or potentiometer for adjustable contrast)
-VEE      GND              Controls LCD contrast
+### 1. Hardware Setup
 
-Hall Sensor   Module Pin	 Arduino Pin	Notes
-VCC	          5V	         Power
-GND	          GND	         Ground
-AO 	          A0	         Analog input pin for sensor output
+- Fix the Arduino board, LCD, and Hall effect sensor module on a breadboard or base.
+- Ensure all components are secure and won't shift during rotation.
 
-3. Upload Code
-Open your Arduino IDE.
-Paste the code given - 
-Connect your Arduino to the PC using USB.
-Upload the code to the Arduino board.
+### 2. Wiring Connections
 
-4. Power the Circuit
-You can power the Arduino via USB or an external 5V power supply.
-Ensure all connections remain secure and stable.
+#### LCD → Arduino
 
-5. Measure RPM
-Attach a small magnet firmly to the rotating object (e.g., wheel, shaft).
-Rotate the object near the Hall effect sensor.
-The sensor detects each passing magnet, and the Arduino counts pulses.
-The LCD displays the current RPM, updating every second.
-You can also monitor RPM values via the Serial Monitor in the Arduino IDE.
+| LCD Pin | Arduino Pin | Description           |
+|---------|-------------|-----------------------|
+| DB7     | D2          | Data bit 7            |
+| DB6     | D3          | Data bit 6            |
+| DB5     | D4          | Data bit 5            |
+| DB4     | D5          | Data bit 4            |
+| E       | D11         | Enable pin            |
+| R/W     | GND         | Write mode            |
+| RS      | D12         | Register select       |
+| VCC     | 5V          | Power supply          |
+| VSS     | GND         | Ground                |
+| R5      | GND         | Contrast control      |
+| VEE     | GND         | Contrast control      |
 
-Expected Results when running this on hardware:
-Raw Sensor Values: The Serial Monitor will print analog readings from your Hall effect sensor continuously, values will fluctuate depending on magnetic field presence. You’ll see values below 600 when no magnet is near and above 600 when the magnet passes by the sensor.
-Pulse Counting and RPM Calculation: Each time the sensor reading crosses above the threshold (600), it counts as one pulse (one rotation or part of a rotation depending on your setup).
-RPM Display: Every second, the LCD will update showing the RPM calculated as:
-RPM = number_of_pulses_in_1_second * 60
+#### Hall Sensor → Arduino
+
+| Sensor Pin | Arduino Pin | Description       |
+|------------|-------------|-------------------|
+| VCC        | 5V          | Power             |
+| GND        | GND         | Ground            |
+| AO         | A0          | Analog input pin  |
+
+### 3. Upload the Code
+
+1. Open the Arduino IDE  
+2. Load the code from [`tachometer.ino`](./tachometer.ino)  
+3. Connect your Arduino Nano via USB  
+4. Upload the code  
+
+### 4. Power the Circuit
+
+- Use USB or an external 5V power supply to power the board.
+
+### 5. Measure RPM
+
+- Attach a small **magnet** securely to the rotating object (wheel, shaft, etc.).
+- When it passes near the Hall effect sensor, a pulse is counted.
+- RPM is updated every second on the LCD.
+- You can also view readings via the Serial Monitor.
+
+---
+
+## ✅ Expected Results
+
+- **Raw Sensor Values**: The Serial Monitor will print analog readings from the Hall effect sensor.  
+  - ~0–600 when no magnet is nearby  
+  - >600 when the magnet passes close  
+
+- **Pulse Counting**: One pulse per magnet pass (rotation or partial rotation)
+
+- **RPM Calculation**:  
